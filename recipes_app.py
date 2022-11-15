@@ -3,7 +3,7 @@ import pandas as pd
 
 st.title('Find Recipes that use your ingredients')
 
-data = pd.read_csv('AllRecipes_DB.csv.gz')
+data = pd.read_parquet('AllRecipes_DB.parquet')
 
 list_of_clean_ingredients = pd.read_csv('distinct_ingredients.csv')['ingredients']
 
