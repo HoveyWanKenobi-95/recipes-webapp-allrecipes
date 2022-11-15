@@ -18,7 +18,7 @@ if st.button('Get the Recipes'):
         data[((ingredients_mask)&
           (data.prep_time <= prep_time_cutoff)&
           (data.total_time <= total_time_cutoff)&
-          (data.ratings>= ratings_cutoff))]
+          (data.ratings>= ratings_cutoff))][['title','ratings','prep_time','total_time','canonical_url']]
     )
 else:
     pass
