@@ -13,7 +13,7 @@ total_time_cutoff = st.slider('Maximum Total Time', min_value = data.total_time.
 ingredients_list = st.multiselect('Ingredients you have', options = list_of_clean_ingredients)
 
 if st.button('Get the Recipes'):
-    ingredients_mask = data.clean_ingredients.apply(lambda x: set(ingredients_list) <= set(x))
+    ingredients_mask = data.ingredients_cln.apply(lambda x: set(ingredients_list) <= set(x))
     st.dataframe(
         data[((ingredients_mask)&
           (data.prep_time <= prep_time_cutoff)&
